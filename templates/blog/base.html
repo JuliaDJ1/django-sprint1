@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Блогикум{% endblock %}</title>
     
-    {% load static %}
+    {% load static %}  <!-- Load здесь — после title, внутри <head>! -->
     
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-
     <header>
         <nav class="navbar navbar-light" style="background-color: lightskyblue;">
             <div class="container">
@@ -42,6 +41,5 @@
     <footer class="border-top text-center py-3">
         <p>© Блогикум</p>
     </footer>
-
 </body>
 </html>
