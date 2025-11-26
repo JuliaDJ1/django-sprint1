@@ -49,8 +49,9 @@ def index(request):
                   {'posts': reversed(posts)})
 
 
-def post_detail(request, id):
-    post = next((p for p in posts if p['id'] == id), None)
+def post_detail(request, post_id):
+    post = next((p for p in posts if p['id'] == post_id),
+                None)
     return render(request, 'blog/detail.html',
                   {'post': post})
 

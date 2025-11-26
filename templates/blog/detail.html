@@ -1,19 +1,20 @@
 {% extends "blog/base.html" %}
-{% load static %}
+
+{% block title %}{{ post.location }} — Блогикум{% endblock %}
 
 {% block content %}
-<main class="container">
-    <article class="post-detail">
-        <div class="post-category">
-            <img src="{% static 'img/travel.png' %}" alt="Категория" class="category-icon">
-            <span class="category-name">{{ post.category }}</span>
-        </div>
-        <h1 class="post-title">{{ post.location }}</h1>
-        <p class="post-date">{{ post.date }}</p>
-        <div class="post-text">
-            {{ post.text|linebreaks }}
-        </div>
-        <a href="{% url 'blog:index' %}" class="back-link">← Вернуться к списку постов</a>
-    </article>
-</main>
+    <main class="container">
+        <article class="post-detail">
+            <div class="post-category">
+                <img src="{% static 'img/travel.png' %}" alt="Категория" class="category-icon">
+                <span class="category-name">{{ post.category }}</span>
+            </div>
+            <h1 class="post-title">{{ post.location }}</h1>
+            <p class="post-date">{{ post.date }}</p>
+            <div class="post-text">
+                {{ post.text|linebreaks }}
+            </div>
+            <a href="{% url 'blog:index' %}" class="back-link">← Вернуться к списку постов</a>
+        </article>
+    </main>
 {% endblock %}
