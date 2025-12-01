@@ -16,6 +16,6 @@ def category_posts(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
     posts = Post.objects.filter(category=category).order_by('-pub_date')
     return render(request, 'blog/category.html', {
-        'category': category,
         'posts': posts,
+        'category': category,
     })
