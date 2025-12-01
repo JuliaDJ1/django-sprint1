@@ -1,16 +1,17 @@
 {% extends "blog/base.html" %}
-{% block title %}{{ post.location }} — Блогикум{% endblock %}
+{% block title %}{{ post.title }} — Блогикум{% endblock %}
 
 {% block content %}
-    <article class="post-detail">
-        <div class="post-category">
-            <span class="category-name">{{ post.category }}</span>
-        </div>
-        <h1 class="post-title">{{ post.location }}</h1>
-        <p class="post-date">{{ post.pub_date|date:"d E Y" }}</p>
-        <div class="post-text">
-            {{ post.text|linebreaks }}
-        </div>
-        <a href="{% url 'blog:index' %}" class="back-link">← Вернуться к списку постов</a>
-    </article>
+<article class="post-detail">
+    <div class="post-category">
+        <span class="category-name">{{ post.category }}</span>
+    </div>
+    <h1 class="post-title">{{ post.title }}</h1>
+    <p class="post-date">{{ post.pub_date|date:"d E Y" }}</p>
+    <div class="post-text">
+        {{ post.text|linebreaks }}
+    </div>
+    <a href="{% url 'blog:index' %}" class="back-link">← Вернуться к списку постов</a>
+</article>
 {% endblock %}
+
