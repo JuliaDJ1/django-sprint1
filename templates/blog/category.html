@@ -1,9 +1,9 @@
 {% extends "blog/base.html" %}
-
-{% block title %}Категория «{{ category_slug }}» — Блогикум{% endblock %}
+{% block title %}Категория «{{ category.title }}» — Блогикум{% endblock %}
 
 {% block content %}
-<main class="container">
-    <h1>Публикации в категории {{ category_slug }}</h1>
-</main>
+    <h1>Публикации в категории «{{ category.title }}»</h1>
+    {% for post in posts %}
+        {% include 'blog/includes/_post_partial.html' with post=post %}
+    {% endfor %}
 {% endblock %}
