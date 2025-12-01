@@ -44,16 +44,12 @@ class Post(models.Model):
         on_delete=models.CASCADE,
         verbose_name='Категория',
     )
-    image = models.ImageField(
-        upload_to='posts/',
-        blank=True,
-        verbose_name='Картинка',
-    )
+    # image удалено, чтобы не требовался Pillow
 
     class Meta:
         verbose_name = 'Публикация'
         verbose_name_plural = 'Публикации'
-        ordering = ['-pub_date',]
+        ordering = ['-pub_date']
 
     def __str__(self):
         return self.title

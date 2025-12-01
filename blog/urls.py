@@ -1,11 +1,9 @@
 from django.urls import path
+from django.views.generic import TemplateView
 
-from . import views
-
-app_name = 'blog'
+app_name = 'pages'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('posts/<int:post_id>/', views.post_detail, name='post_detail'),
-    path('category/<slug:category_slug>/', views.category_posts, name='category_posts'),
+    path('about/', TemplateView.as_view(template_name='pages/about.html'), name='about'),
+    path('rules/', TemplateView.as_view(template_name='pages/rules.html'), name='rules'),
 ]

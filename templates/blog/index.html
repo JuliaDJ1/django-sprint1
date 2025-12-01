@@ -1,8 +1,9 @@
 {% extends "blog/base.html" %}
+
 {% block title %}Главная — Блогикум{% endblock %}
 
 {% block content %}
     {% for post in posts %}
-        {% include 'blog/includes/_post_partial.html' with post=post %}
+        {% include 'includes/_post_partial.html' with post=post %}
     {% endfor %}
 {% endblock %}
