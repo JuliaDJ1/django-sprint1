@@ -52,7 +52,7 @@ def index(request):
 def post_detail(request, id: int):
     post = next((p for p in posts if p['id'] == id), None)
     if post is None:
-        raise Http404("Пост с таким id не найден")
+        raise Http404('Пост не найден')
     return render(request, 'blog/detail.html', {'post': post})
 
 
