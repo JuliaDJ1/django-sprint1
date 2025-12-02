@@ -1,0 +1,27 @@
+<article class="{% if detail %}post-detail{% else %}post{% endif %}">
+    <div class="post-category">
+        <span class="category-name">{{ post.category }}</span>
+    </div>
+
+    {% if detail %}
+        <h1 class="post-title">{{ post.location }}</h1>
+    {% else %}
+        <h2 class="post-title">
+            <a href="{% url 'blog:post_detail' post.id %}">{{ post.location }}</a>
+        </h2>
+    {% endif %}
+
+    <p class="post-date">{{ post.date }}</p>
+
+    <div class="post-text">
+        {% if detail %}
+            {{ post.text|linebreaks }}
+        {% else %}
+            {{ post.text|linebreaks|truncatewords:30 }}...
+        {% endif %}
+    </div>
+
+    {% if not detail %}
+        <a href="{% url 'blog:post_detail' post.id %}" class="read-more">Читать полностью</a>
+    {% endif %}
+</article>

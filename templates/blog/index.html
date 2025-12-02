@@ -3,9 +3,7 @@
 {% block title %}Главная — Блогикум{% endblock %}
 
 {% block content %}
-<main class="container">
     {% for post in posts %}
-        {% include 'blog/_post_partial.html' with post=post %}
+        {% include 'includes/_post_partial.html' with post=post %}
     {% endfor %}
-</main>
 {% endblock %}

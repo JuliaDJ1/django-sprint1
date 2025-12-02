@@ -3,17 +3,6 @@
 {% block title %}{{ post.location }} — Блогикум{% endblock %}
 
 {% block content %}
-<main class="container">
-<article class="post-detail">
-    <div class="post-category">
-        <span class="category-name">{{ post.category }}</span>
-    </div>
-    <h1 class="post-title">{{ post.location }}</h1>
-    <p class="post-date">{{ post.date }}</p>
-    <div class="post-text">
-        {{ post.text|linebreaks }}
-    </div>
+    {% include 'includes/_post_partial.html' with post=post detail=True %}
     <a href="{% url 'blog:index' %}" class="back-link">← Вернуться к списку постов</a>
-</article>
-</main>
 {% endblock %}
